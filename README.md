@@ -27,6 +27,20 @@ See the [`examples/`](examples/) directory for working examples.
   - [Use existing SNS topic](examples/simple/)
   - [create SNS and hook to PagerDuty](examples/create-sns/)
 
+One can also simply assign the source from [terraform registry](https://registry.terraform.io/modules/dubiety/sns-pagerduty/aws/):
+
+```hcl
+module "sns-pagerduty" {
+  source  = "dubiety/sns-pagerduty/aws"
+  version = "0.1.0"
+
+  create             = 1
+  create_sns_topic   = 1
+  pagerduty_endpoint = "https://events.pagerduty.com/integration/INTEGRATION_KEY/enqueue"
+  sns_topic_name     = "cloudwatch-incidents-demo"
+}
+```
+
 ## Share the Love
 
 Like this project? Please give it a ★ on [our GitHub](https://github.com/dubiety/terraform-aws-sns-pagerduty)!
