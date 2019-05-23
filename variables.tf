@@ -15,3 +15,8 @@ variable "pagerduty_endpoint" {
 variable "sns_topic_name" {
   description = "The name of SNS topic to create or reference"
 }
+
+variable "display_name" {
+  description = "The display name for the SNS topic"
+  default     = ""
+}
