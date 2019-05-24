@@ -10,16 +10,17 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| `create` | Whether to create all the resources | string | `1` | no |
-| `create_sns_topic` | Whether to create new SNS topic or use the existed one | string | `1` | no |
-| `pagerduty_endpoint` | PagerDuty HTTPS endpoint where SNS will be sent to | string | - | yes |
-| `sns_topic_name` | The name of SNS topic to create or reference | string | - | yes |
+| create | Whether to create all the resources | string | `"true"` | no |
+| create\_sns\_topic | Whether to create new SNS topic | string | `"true"` | no |
+| pagerduty\_endpoint | The PagerDuty HTTPS endpoint where SNS notifications will be sent to | string | n/a | yes |
+| sns\_topic\_name | The name of SNS topic to create or reference | string | n/a | yes |
+| tags | A map of tags to add to the sns_topic resource | map | `<map>` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| `sns_topic_arn` | The ARN of the SNS topic |
+| sns\_topic\_arn | The ARN of the SNS topic |
 
 ## Examples
 
