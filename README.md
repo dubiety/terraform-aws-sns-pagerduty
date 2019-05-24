@@ -15,6 +15,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 | display\_name | The display name for the SNS topic | string | `""` | no |
 | pagerduty\_endpoint | The PagerDuty HTTPS endpoint where SNS notifications will be sent to | string | n/a | yes |
 | sns\_topic\_name | The name of SNS topic to create or reference | string | n/a | yes |
+| tags | A map of tags to add to the sns_topic resource | map | `<map>` | no |
 
 ## Outputs
 

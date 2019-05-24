@@ -7,6 +7,7 @@ resource "aws_sns_topic" "pagerduty" {
   count        = "${var.create_sns_topic * var.create}"
   name         = "${var.sns_topic_name}"
   display_name = "${var.display_name}"
+  tags         = "${var.tags}"
 }
 
 locals {
