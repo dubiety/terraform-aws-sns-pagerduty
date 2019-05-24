@@ -34,7 +34,7 @@ One can also simply assign the source from [terraform registry](https://registry
 ```hcl
 module "sns-pagerduty" {
   source  = "dubiety/sns-pagerduty/aws"
-  version = "0.1.0"
+  version = "0.2.0"
 
   create             = 1
   create_sns_topic   = 1
