@@ -16,6 +16,11 @@ variable "sns_topic_name" {
   description = "The name of SNS topic to create or reference"
 }
 
+variable "display_name" {
+  description = "The display name for the SNS topic"
+  default     = ""
+}
+
 variable "tags" {
   description = "A map of tags to add to the sns_topic resource"
   default     = {}
