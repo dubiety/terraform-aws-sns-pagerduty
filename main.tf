@@ -1,23 +1,23 @@
 data "aws_sns_topic" "pagerduty" {
-  count = "${(1 - var.create_sns_topic) * var.create}"
-  name  = "${var.sns_topic_name}"
+  count = 1 - (var.create_sns_topic ? 1 : 0) * (var.create ? 1 : 0)
+  name  = var.sns_topic_name
 }
 
 resource "aws_sns_topic" "pagerduty" {
-  count        = "${var.create_sns_topic * var.create}"
-  name         = "${var.sns_topic_name}"
-  display_name = "${var.display_name}"
-  tags         = "${var.tags}"
+  count        = (var.create_sns_topic ? 1 : 0) * (var.create ? 1 : 0)
+  name         = var.sns_topic_name
+  display_name = var.display_name
+  tags         = var.tags
 }
 
 locals {
-  sns_topic_arn = "${element(concat(aws_sns_topic.pagerduty.*.arn, data.aws_sns_topic.pagerduty.*.arn, list("")), 0)}"
+  sns_topic_arn = element(concat(aws_sns_topic.pagerduty.*.arn, data.aws_sns_topic.pagerduty.*.arn, list("")), 0)
 }
 
 resource "aws_sns_topic_subscription" "pagerduty" {
-  count                  = "${var.create}"
-  endpoint               = "${var.pagerduty_endpoint}"
+  count                  = var.create ? 1 : 0
+  endpoint               = var.pagerduty_endpoint
   endpoint_auto_confirms = true
   protocol               = "https"
-  topic_arn              = "${local.sns_topic_arn}"
+  topic_arn              = local.sns_topic_arn
 }
