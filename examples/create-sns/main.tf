@@ -11,7 +11,7 @@ module "notify_pagerduty" {
   pagerduty_endpoint = "https://events.pagerduty.com/integration/INTEGRATION_KEY/enqueue"
 
   tags {
-    "Env" = "prod"
-    "foo" = "bar"
+    Env = "prod"
+    foo = "bar"
   }
 }
