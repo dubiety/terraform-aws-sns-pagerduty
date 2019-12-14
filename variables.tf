@@ -26,6 +26,11 @@ variable "display_name" {
   default     = ""
 }
 
+variable "kms_master_key_id" {
+  description = "The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK"
+  default     = ""
+}
+
 variable "tags" {
   description = "A map of tags to add to the sns_topic resource"
   type        = map(string)
