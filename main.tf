@@ -12,7 +12,7 @@ resource "aws_sns_topic" "pagerduty" {
 }
 
 locals {
-  sns_topic_arn = coalesce(aws_sns_topic.pagerduty.*.arn[0], data.aws_sns_topic.pagerduty.*.arn[0])
+  sns_topic_arn = coalescelist(aws_sns_topic.pagerduty.*.arn, data.aws_sns_topic.pagerduty.*.arn)[0]
 }
 
 resource "aws_sns_topic_subscription" "pagerduty" {
