@@ -12,7 +12,7 @@ resource "aws_sns_topic" "pagerduty" {
 }
 
 locals {
-  sns_topic_arn = element(concat(aws_sns_topic.pagerduty.*.arn, data.aws_sns_topic.pagerduty.*.arn, list("")), 0)
+  sns_topic_arn = coalesce(aws_sns_topic.pagerduty.*.arn, data.aws_sns_topic.pagerduty.*.arn)
 }
 
 resource "aws_sns_topic_subscription" "pagerduty" {
