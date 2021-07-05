@@ -6,6 +6,9 @@
 Terraform module that integrate PagerDuty to SNS topic.
 It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
+`v0.x` supports terraform `v0.12+` syntax!
+`v1.x` supports terraform `v1.0+` syntax!
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
