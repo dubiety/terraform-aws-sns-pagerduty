@@ -1,6 +1,6 @@
 # terraform-aws-sns-pagerduty
 
-[![Build Status](https://travis-ci.com/dubiety/terraform-aws-sns-pagerduty.svg?branch=master)](https://travis-ci.org/dubiety/terraform-aws-sns-pagerduty)
+[![Build Status](https://travis-ci.com/dubiety/terraform-aws-sns-pagerduty.svg?branch=master)](https://app.travis-ci.com/github/dubiety/terraform-aws-sns-pagerduty)
 [![Latest Release](https://img.shields.io/github/release/dubiety/terraform-aws-sns-pagerduty.svg)](https://github.com/dubiety/terraform-aws-sns-pagerduty/releases)
 
 Terraform module that integrate PagerDuty to SNS topic.
